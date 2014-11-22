@@ -1,0 +1,16 @@
+// V3 DOFILE for the user tutorial "Read and Write BTOR Designs".
+// BE SURE to execute this script under the directory that contains it.
+
+// 1. Read the BTOR design
+read btor alu.btor -s
+// 2. Write the network in BTOR
+write btor v3_alu.btor -s
+// 3. Write the network in Verilog
+write rtl v3_alu.v -s
+// 4. Report network information
+print ntk -primary
+print ntk -verbose
+// 5. Plot network topology
+plot ntk -png v3_depth.png -d 2
+// Quit the program
+quit -f

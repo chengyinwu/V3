@@ -1,0 +1,2 @@
+QUICK INSTALL: 
+   cd engine; ./minisat.script; ./boolector.script; ./quteRTL.script; cd ..; make clean; make;

@@ -1,0 +1,29 @@
+// V3 DOFILE for the user tutorial "Design Verification Using V3".
+// BE SURE to execute this script under the directory that contains it.
+
+// 1. Read the Verilog design
+read rtl traffic.v
+// 2. Blast PI/PIO/FF into Bits
+blast ntk -primary
+// 3. Set a safety property p1: G(!output2)
+set safety 2
+// 4. Report verification verbosity settings
+print report
+// 5. Verify p1 using property directed reachability (PDR)
+verify pdr p1
+// 6. Turn on all verification verbosities
+set report -all -on
+// 7. Verify p1 using PDR again
+verify pdr p1
+// 8. Turn off all verification verbosities
+set report -all -off
+// 9. Verify p1 using PDR again
+verify pdr p1
+// 10. Reset verification verbosities
+set report -reset
+// 11. Set verification verbosities for clean output
+set report -result -off
+// 12. Verify p1 using PDR again
+verify pdr p1
+// Quit the program
+quit -f

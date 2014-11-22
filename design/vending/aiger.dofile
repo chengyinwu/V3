@@ -1,0 +1,20 @@
+// V3 DOFILE for the user tutorial "Design Simulation Using V3".
+// BE SURE to execute this script under the directory that contains it.
+
+// 1. Read the Verilog design
+read rtl vending.v
+// 2. Blast into Boolean-level network
+blast ntk
+// 3. Report network information
+print ntk -primary
+print ntk -verbose
+// 3. Simulate pattern file
+sim ntk -input input.pattern -output aiger-sim.output
+// 4. Turn on event-driven simulation
+sim ntk -input input.pattern -output aiger-event.output -e
+// 5. Dump simulation results into waveform file
+plot trace input.pattern aiger-vending.vcd
+// 6. Write the network in Verilog
+write rtl aiger-vending.v -s
+// Quit the program
+quit -f

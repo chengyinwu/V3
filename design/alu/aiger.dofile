@@ -1,0 +1,16 @@
+// V3 DOFILE for the user tutorial "Read and Write AIGER Designs".
+// BE SURE to execute this script under the directory that contains it.
+
+// 1. Read the AIGER design
+read aig alu.aig -s
+// 2. Write the network in AIGER
+write aig v3_alu.aig -s
+// 3. Write the network in Verilog
+write rtl v3_alu.v -s
+// 4. Report network information
+print ntk -primary
+print ntk -verbose
+// 5. Plot network topology
+plot ntk -png v3_level.png -l 5
+// Quit the program
+quit -f

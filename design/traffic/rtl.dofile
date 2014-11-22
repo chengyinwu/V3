@@ -1,0 +1,35 @@
+// V3 DOFILE for the user tutorial "Design Verification Using V3".
+// BE SURE to execute this script under the directory that contains it.
+
+// 1. Read the Verilog design
+read rtl traffic.v
+// 2. Report network information
+print ntk -primary
+// 3. Blast PI/PIO/FF into Bits
+blast ntk -primary
+// 4. Print current solver
+print solver
+// 5. Set current solver as Boolector
+set solver -boolector
+// 6. Set a safety property p1: G(!output0)
+set safety 0
+// 7. Verify p1 using unbounded model checking (BMC + induction)
+verify umc p1
+// 8. Set another safety property p2: G(!output1)
+set safety 1
+// 9. Verify p2 using interpolation-based model checking
+verify itp p2
+// 10. Set the last safety property p3: G(!output2)
+set safety 2
+// 11. Verify p3 using property directed reachability (PDR)
+verify pdr p3
+// 12. Check counterexample for the p3
+check result p3
+// 13. Write the counterexample trace for p3
+write result p3 rtl-p3.pattern
+// 14. Check if the pattern output leads to a counterexample of p3
+check result p3 -trace rtl-p3.pattern
+// 15. Dump the counterexample trace into waveform file
+plot result p3 rtl-p3.vcd
+// Quit the program
+quit -f

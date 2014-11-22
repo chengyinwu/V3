@@ -1,0 +1,24 @@
+Copyright (c) 2012 - 2014
+Design Verification Lab (DVLab), Graduate Institute of Electronics Engineering,
+National Taiwan University (NTU), Taipei, Taiwan. ALL RIGHTS RESERVED.
+
+V3: An Extensible Framework for Hardware Verification and Debugging
+
+http://dvlab.ee.ntu.edu.tw/~publication/V3
+
+
+THIS LICENSE IS NOT APPLICABLE TO NON-COMMERCIAL PURPOSES.
+IN ADDITION, USING THIS SOFTWARE WITHOUT EXPLICIT PERMISSIONS IS PROHIBITED.
+
+Permission is hereby granted, free of charge, to use, copy, and modify this
+software and its documentations for evaluation and research purposes, provided
+that the above copyright notice and the following content appear in all copies
+or substantial portions of this software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.

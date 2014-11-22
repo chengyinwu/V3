@@ -1,0 +1,25 @@
+echo "########################################################################################################################";
+echo "#####      Please note that this script is designed for the installation of boolector-1.6.0-with-sat-solvers.      #####";
+echo "#####      Thus the compatibility of the script with other Boolector versions is not always guaranteed.            #####";
+echo "########################################################################################################################";
+
+# get Boolector package
+echo "Downloading Boolector ..."
+wget http://fmv.jku.at/boolector/boolector-1.6.0-with-sat-solvers.tar.gz;
+tar zxvf boolector-1.6.0-with-sat-solvers.tar.gz >& /dev/null; rm -f boolector-1.6.0-with-sat-solvers.tar.gz;
+rm -rf boolector; mv boolector-1.6.0-with-sat-solvers boolector;
+
+# build Boolector
+echo "Building Boolector ...";
+cd boolector; ./build.sh >& /dev/null;
+
+# create a new directory for keeping files
+rm -rf v3_src; mkdir v3_src; cp boolector/boolector.h v3_src;
+ar rc v3_src/libboolector.a */*.o minisat/build/release/minisat/*/*.o;
+
+# clean Boolector
+./clean.sh >& /dev/null;
+
+# create softlink from boolector/v3_src to src/eng/boolector
+echo "Creating softlink from boolector/v3_src to src/eng/boolector ...";
+cd ../../src/eng; rm -rf boolector; ln -s ../../engine/boolector/v3_src boolector;

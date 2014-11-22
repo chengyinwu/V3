@@ -1,0 +1,24 @@
+echo "########################################################################################################################";
+echo "#####          Please note that this script is designed for the installation of quteRTL-V3-1.2.                    #####";
+echo "#####          Thus the compatibility of the script with other QuteRTL versions is not always guaranteed.          #####";
+echo "########################################################################################################################";
+
+# get QuteRTL package
+echo "Downloading QuteRTL ..."
+wget http://dvlab.ee.ntu.edu.tw/~publication/V3/release/quteRTL-V3-1.2.tar.gz;
+tar zxvf quteRTL-V3-1.2.tar.gz >& /dev/null; rm -f quteRTL-V3-1.2.tar.gz;
+rm -rf quteRTL; mv quteRTL-V3-1.2 quteRTL;
+
+# build QuteRTL
+echo "Building QuteRTL ...";
+cd quteRTL; make clean >& /dev/null; make v3Lib >& /dev/null;
+
+# create a new directory for keeping files
+rm -rf v3_src; mkdir v3_src; cp quteRTL.h v3_src; cp *.a v3_src;
+
+# clean QuteRTL
+make clean >& /dev/null;
+
+# create softlink from quteRTL/v3_src to src/eng/quteRTL
+echo "Creating softlink from quteRTL/v3_src to src/eng/quteRTL ...";
+cd ../../src/eng; rm -rf quteRTL; ln -s ../../engine/quteRTL/v3_src quteRTL;

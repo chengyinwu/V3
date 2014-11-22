@@ -1,0 +1,50 @@
+echo "########################################################################################################################";
+echo "#####         Please note that this script is designed for the installation of Minisat v2.2 core on git.           #####";
+echo "#####         Thus the compatibility of the script with other Minisat versions is not always guaranteed.           #####";
+echo "########################################################################################################################";
+
+# get Minisat package
+echo "Downloading Minisat ..."
+#rm -rf minisat; git clone https://github.com/niklasso/minisat.git;
+rm -rf minisat; wget https://github.com/niklasso/minisat/archive/master.zip;
+unzip master >& /dev/null; mv minisat-master minisat; rm -f master;
+
+# copy source code to a new directory
+echo "Copying files to minisat/v3_src ...";
+cd minisat; rm -rf v3_src; mkdir v3_src; cd v3_src;
+cp -f ../minisat/core/* .; cp -f ../minisat/mtl/* .; cp -f ../minisat/utils/* .;
+
+# typedef Solver to MSolver
+echo "Modifying files under minisat/v3_src ...";
+sed -i '/^}$/{
+   N
+   N
+s/}\n\n#endif/typedef Solver MSolver;\n\n#endif/ } ' Solver.h
+
+# resolve header files
+sed -i 's/minisat\/mtl\///g' *;
+sed -i 's/minisat\/utils\///g' *;
+sed -i 's/minisat\/core\///g' *;
+
+# remove namespace (ad hoc, not general)
+sed -i '/^}$/{
+   N
+   N
+s/}\n\n#endif/\n\n#endif/ } ' *.h;
+sed -i '/^}$/{
+   N
+   N
+s/}\n\n\/\/---/\n\n\/\/---/ } ' System.h;
+sed -i 's/namespace Minisat {//g' *.h;
+sed -i 's/using namespace Minisat;//g' *.cc;
+sed -i 's/Minisat:://g' *.cc System.h;
+sed -i 's/} \/\/ namespace Minisat//g' *.cc IntMap.h;
+
+# build Minisat
+echo "Building Minisat ...";
+cp ../../minisat.mk Makefile; export MROOT=./; gmake rs >& /dev/null;
+rm -f Main.or; ar cr libminisat.a *.or; rm -f v3_src* *.cc *.mk *.or;
+
+# create softlink from minisat/v3_src to src/eng/minisat
+echo "Creating softlink from minisat/v3_src to src/eng/minisat ...";
+cd ../../../src/eng; rm -rf minisat; ln -s ../../engine/minisat/v3_src minisat;

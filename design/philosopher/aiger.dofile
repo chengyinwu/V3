@@ -1,0 +1,23 @@
+// V3 DOFILE for the user tutorial "Design Verification Using V3".
+// BE SURE to execute this script under the directory that contains it.
+
+// 1. Read the Verilog design
+read rtl ph64.v
+// 2. Flatten the design
+flatten ntk
+// 3. Blast into Boolean-level network
+blast ntk
+// 4. Set a safety property p1: G(!output0)
+set safety 0
+// 5. Verify p1 using UMC / ITP / PDR
+verify umc p1
+verify itp p1
+verify pdr p1
+// 6. Set a liveness property p2: F(!output1)
+set liveness -invc PO[1]
+// 7. Verify p2 using UMC / ITP / PDR
+verify umc p2
+verify itp p2
+verify pdr p2
+// Quit the program
+quit -f

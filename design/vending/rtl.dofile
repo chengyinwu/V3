@@ -1,0 +1,16 @@
+// V3 DOFILE for the user tutorial "Design Simulation Using V3".
+// BE SURE to execute this script under the directory that contains it.
+
+// 1. Read the Verilog design
+read rtl vending.v
+// 2. Report network information
+print ntk -primary
+print ntk -verbose
+// 3. Simulate pattern file
+sim ntk -input input.pattern -output rtl-sim.output
+// 4. Turn on event-driven simulation
+sim ntk -input input.pattern -output rtl-event.output -e
+// 5. Dump simulation results into waveform file
+plot trace input.pattern rtl-vending.vcd
+// Quit the program
+quit -f
