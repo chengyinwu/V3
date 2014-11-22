@@ -1,20 +1,20 @@
 echo "Running aiger.dofile ..."
 if [ "$1" == "-stdout" ]; then
-   ../../bin/v3 -f aiger.dofile
+   ../../v3 -f aiger.dofile
 else
-   ../../bin/v3 -f aiger.dofile > aiger.result
+   ../../v3 -f aiger.dofile > aiger.result
 fi
 
 echo "Running btor.dofile ..."
 if [ "$1" == "-stdout" ]; then
-   ../../bin/v3 -f btor.dofile
+   ../../v3 -f btor.dofile
 else
-   ../../bin/v3 -f btor.dofile > btor.result
+   ../../v3 -f btor.dofile > btor.result
 fi
 
 echo "Running rtl.dofile ..."
 if [ "$1" == "-stdout" ]; then
-   ../../bin/v3 -f rtl.dofile
+   ../../v3 -f rtl.dofile
 else
-   ../../bin/v3 -f rtl.dofile > rtl.result
+   ../../v3 -f rtl.dofile > rtl.result
 fi
