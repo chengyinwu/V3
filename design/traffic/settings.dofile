@@ -1,4 +1,4 @@
-// V3 DOFILE for the user tutorial "Design Verification Using V3".
+// V3 DOFILE for the user tutorial "Design Verification -- Part 1".
 // BE SURE to execute this script under the directory that contains it.
 
 // 1. Read the Verilog design

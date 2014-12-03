@@ -124,7 +124,7 @@ V3BlastNtkCmd::exec(const string& option) {
 
 void
 V3BlastNtkCmd::usage(const bool& verbose) const {
-   Msg(MSG_IFO) << "Usage: BLAst NTk" << endl;
+   Msg(MSG_IFO) << "Usage: BLAst NTk [-Primary]" << endl;
    Msg(MSG_IFO) << "Param: [-Primary]: Bit-blast primary inputs, inouts, and latches only." << endl;
 }
 

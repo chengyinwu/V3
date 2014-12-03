@@ -632,8 +632,14 @@ V3Handler::setCurHandlerFromPath(const string& path) {
          }
       }
    }
-   // Copy Data for Last
-   _lastHandlerId = curHandlerId; _lastRefIdVec = curRefIdVec;
+   // Copy Data for Last if Valid, Or Resume Data for Current
+   if (_curHandlerId < _ntkHandlerList.size()) {
+      _lastHandlerId = curHandlerId; _lastRefIdVec = curRefIdVec;
+   }
+   else {
+      _curHandlerId = curHandlerId; _curRefIdVec = curRefIdVec;
+      Msg(MSG_ERR) << "Network " << path << " was Implicitly Created and it is Currently Untraceable !!" << endl;
+   }
 }
 
 void

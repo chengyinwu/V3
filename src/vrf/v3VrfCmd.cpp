@@ -844,12 +844,14 @@ V3BMCVrfCmd::exec(const string& option) {
 void
 V3BMCVrfCmd::usage(const bool& verbose) const {
    Msg(MSG_IFO) << "Usage: VERify BMC [(string propertyName)] [-Max-depth (unsigned MaxDepth)]" << endl;
-   Msg(MSG_IFO) << "                  [-Inc-depth (unsigned IncDepth)]" << endl;
+   Msg(MSG_IFO) << "                  [-Pre-depth (unsigned PreDepth)] [-Inc-depth (unsigned IncDepth)]" << endl;
    if (verbose) {
       Msg(MSG_IFO) << "Param: (string propertyName): The name of a property to be verified." << endl;
       Msg(MSG_IFO) << "       (unsigned MaxDepth)  : The upper bound of time-frames to be reached. (default = 100)" << endl;
+      Msg(MSG_IFO) << "       (unsigned PreDepth)  : The number of frames at initial. (default = 0)" << endl;
       Msg(MSG_IFO) << "       (unsigned IncDepth)  : The number of frames to be increased in each iteration. (default = 1)"<< endl;
       Msg(MSG_IFO) << "       -Max-depth           : Indicate the following token is the time-frame limit." << endl;
+      Msg(MSG_IFO) << "       -Pre-depth           : Indicate the following token is the number of frames at initial." << endl;
       Msg(MSG_IFO) << "       -Inc-depth           : Indicate the following token is the number of frames to be increased." << endl;
    }
 }
@@ -984,12 +986,15 @@ V3UMCVrfCmd::exec(const string& option) {
 void
 V3UMCVrfCmd::usage(const bool& verbose) const {
    Msg(MSG_IFO) << "Usage: VERify UMC [(string propertyName)] [-Max-depth (unsigned MaxDepth)]" << endl;
-   Msg(MSG_IFO) << "                  [-Inc-depth (unsigned IncDepth)] [-NOProve | -NOFire] [-Uniqueness]" << endl;
+   Msg(MSG_IFO) << "                  [-Pre-depth (unsigned PreDepth)] [-Inc-depth (unsigned IncDepth)]" << endl;
+   Msg(MSG_IFO) << "                  [-NOProve | -NOFire] [-Uniqueness]" << endl;
    if (verbose) {
       Msg(MSG_IFO) << "Param: (string propertyName): The name of a property to be verified." << endl;
       Msg(MSG_IFO) << "       (unsigned MaxDepth)  : The upper bound of time-frames to be reached. (default = 100)" << endl;
+      Msg(MSG_IFO) << "       (unsigned PreDepth)  : The number of frames at initial. (default = 0)" << endl;
       Msg(MSG_IFO) << "       (unsigned IncDepth)  : The number of frames to be increased in each iteration. (default = 1)"<< endl;
       Msg(MSG_IFO) << "       -Max-depth           : Indicate the following token is the time-frame limit." << endl;
+      Msg(MSG_IFO) << "       -Pre-depth           : Indicate the following token is the number of frames at initial." << endl;
       Msg(MSG_IFO) << "       -Inc-depth           : Indicate the following token is the number of frames to be increased." << endl;
       Msg(MSG_IFO) << "       -NOProve             : Disable running k-induction in UMC." << endl;
       Msg(MSG_IFO) << "       -NOFire              : Disable performing bounded model checking (BMC) in UMC." << endl;
@@ -1252,10 +1257,18 @@ V3ITPVrfCmd::exec(const string& option) {
 void
 V3ITPVrfCmd::usage(const bool& verbose) const {
    Msg(MSG_IFO) << "Usage: VERify ITP [(string propertyName)] [-Max-depth (unsigned MaxDepth)]" << endl;
+   Msg(MSG_IFO) << "                  [-Reverse] [-Increment] [-Force] [-RECycle]" << endl;
+   Msg(MSG_IFO) << "                  [-Block (unsigned badCount)] [-INDIVidual]" << endl;
    if (verbose) {
       Msg(MSG_IFO) << "Param: (string propertyName): The name of a property to be verified." << endl;
       Msg(MSG_IFO) << "       (unsigned MaxDepth)  : The upper bound of time-frames to be reached." << endl;
+      Msg(MSG_IFO) << "       (unsigned badCount)  : The maximum number of spurious cex for refinement. (default = 1)" << endl;
       Msg(MSG_IFO) << "       -Max-depth           : Indicate the following token is the limit of time-frames." << endl;
+      Msg(MSG_IFO) << "       -Block               : Indicate the following token is the limit to cex analysis." << endl;
+      Msg(MSG_IFO) << "       -Reverse             : Enables the reversed implementation of the algorithm." << endl;
+      Msg(MSG_IFO) << "       -Increment           : Enables incrementing BMC depth dynamically." << endl;
+      Msg(MSG_IFO) << "       -Force               : Enables considering 1~k frames (instead of the k-th frame) in the BMC part." << endl;
+      Msg(MSG_IFO) << "       -RECycle             : Enables cube recycling for interpolant reuse." << endl;
    }
 }
 
