@@ -44,7 +44,7 @@
 ## DOWNLOAD:
 
  Please download the latest V3 here:
-    git clone https://chengyinwu@bitbucket.org/chengyinwu/V3.git
+    git clone https://github.com/chengyinwu/V3
 
 ## INSTALL: 
 
