@@ -1,6 +1,6 @@
 <div align="center">
 <a href="http://dvlab.ee.ntu.edu.tw/~publication/V3">
-  <img src="v3Logo.png">
+  <img src="img/v3Logo.png">
 </a>
 <br/><br/>
 <b>Copyright(c) 2012-2014 DVLab, GIEE, NTU, Taiwan</b>
