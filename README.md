@@ -11,6 +11,10 @@
 <br/><br/>
 </div>
 
+### LATEST NOTE
+
+Our webpage server has been terribly crashed for a long time and it's still under repair. Please contact us if you need more materials.
+
 ## AUTHOR ([Contact](mailto:author.v3@gmail.com))
 
 * [Cheng-Yin Wu](mailto:gro070916@yahoo.com.tw): Seneior software engineer and big data analytics researcher at [VisualOn Inc](http://visualon.com/)
@@ -41,7 +45,7 @@ Get the latest V3 source code: `git clone https://github.com/chengyinwu/V3`
 Please perform the following instructions under directory "engine": 
 
 ```bash
-$ cd <root-directory-of-V3>; cd ./engine;
+$ cd <root-directory-of-V3>/engine;
 ```
 
 This release of V3 requires at least the following engines:
