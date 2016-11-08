@@ -29,10 +29,10 @@ developers as well.
 
 The architecture of V3 consists of four logical layers: 
 
-* Language layer parses in and writes out Boolean-level (e.g. AIGER) as well as word-level (e.g. BTOR, Verilog) designs. 
+* Language layer parses in and writes out Boolean-level (e.g. [AIGER](http://fmv.jku.at/aiger)) as well as word-level (e.g. [BTOR](http://fmv.jku.at/papers/BrummayerBiereLonsing-BPR08.pdf), Verilog) designs. 
 * Network layer properly models design behaviours into networks while preserving abstraction levels of designs. 
 * Application layer is equipped with verification applications, including design simulation. In particular, state-of-the-art SAT-based model checking algorithms (e.g. bounded model checking and induction) are implemented for tackling both safety and liveness properties. Furthermore, V3 confirms verification results and provides counterexample visualization for improving design debugging. 
-* Solver layer adopts certain representative SAT solvers (e.g. MiniSAT) as well as SMT solvers (e.g. Boolector) as core engines for formal applications.  The communication between layers are defined by extensible APIs: Network layer provides network API for network creation and information retrieval while solver layer defines generic solver API for applications to communicate with different solvers. 
+* Solver layer adopts certain representative SAT solvers (e.g. [MiniSAT](https://github.com/niklasso/minisat)) as well as SMT solvers (e.g. [Boolector](http://fmv.jku.at/boolector)) as core engines for formal applications. The communication between layers are defined by extensible APIs: Network layer provides network API for network creation and information retrieval while solver layer defines generic solver API for applications to communicate with different solvers. 
 
 *Due to publication issues, we keep the implementation of several algorithms private.*
 
@@ -50,9 +50,9 @@ $ cd <root-directory-of-V3>/engine;
 
 This release of V3 requires at least the following engines:
 
-- Minisat   : a satisfiability solver (SAT solver)
-- Boolector : a word-level solver (SMT solver)
-- QuteRTL   : a RTL (Verilog) front-end
+- [Minisat](http://minisat.se)   : a satisfiability solver (SAT solver)
+- [Boolector](http://fmv.jku.at/boolector) : a word-level solver (SMT solver)
+- [QuteRTL](http://dvlab.ee.ntu.edu.tw/%7Epublication/QuteRTL)   : a RTL (Verilog) front-end
 
 Please install these engines by executing corresponding scripts under the directory.
 Or please follow our documentation "Linking Engines with V3" for manual installation.
