@@ -4,9 +4,9 @@ echo "#####          Thus the compatibility of the script with other QuteRTL ver
 echo "########################################################################################################################";
 
 # get QuteRTL package
-echo "Downloading QuteRTL ..."
-wget http://dvlab.ee.ntu.edu.tw/~publication/V3/release/quteRTL-V3-1.2.tar.gz;
-tar zxvf quteRTL-V3-1.2.tar.gz >& /dev/null; rm -f quteRTL-V3-1.2.tar.gz;
+#echo "Downloading QuteRTL ..."
+#wget http://dvlab.ee.ntu.edu.tw/~publication/V3/release/quteRTL-V3-1.2.tar.gz;
+tar zxvf quteRTL-V3-1.2.tar.gz >& /dev/null;
 rm -rf quteRTL; mv quteRTL-V3-1.2 quteRTL;
 
 # build QuteRTL
