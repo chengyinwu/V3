@@ -17,7 +17,7 @@ Our webpage server has been terribly crashed for a long time and it's still unde
 
 ## AUTHOR ([Contact](mailto:author.v3@gmail.com))
 
-* [Cheng-Yin Wu](mailto:gro070916@yahoo.com.tw): Software Developer at [Athena Capital Research](https://www.athenacr.com/)
+* [Cheng-Yin Wu](mailto:gro070916@yahoo.com.tw): Software Developer at [Athena Capital Research LLC](https://www.athenacr.com/)
 * [Chung-Yang (Ric) Huang](mailto:ric@cc.ee.ntu.edu.tw): Professor at [National Taiwan University](http://www.ntu.edu.tw/index.html)
 
 ## INTRODUCTION
