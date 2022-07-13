@@ -11,7 +11,7 @@ rm -rf boolector; mv boolector-1.6.0-with-sat-solvers boolector;
 
 # build Boolector
 echo "Building Boolector ...";
-cd boolector; ./build.sh >& /dev/null;
+cd boolector; ./build.sh;
 
 # create a new directory for keeping files
 rm -rf v3_src; mkdir v3_src; cp boolector/boolector.h v3_src;

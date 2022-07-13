@@ -42,7 +42,7 @@ sed -i 's/} \/\/ namespace Minisat//g' *.cc IntMap.h;
 
 # build Minisat
 echo "Building Minisat ...";
-cp ../../minisat.mk Makefile; export MROOT=./; gmake rs >& /dev/null;
+cp ../../minisat.mk Makefile; export MROOT=./; make rs;
 rm -f Main.or; ar cr libminisat.a *.or; rm -f v3_src* *.cc *.mk *.or;
 
 # create softlink from minisat/v3_src to src/eng/minisat

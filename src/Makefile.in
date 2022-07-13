@@ -14,7 +14,7 @@ AR	= ar cr
 ENGFLGS = -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS
 
 #CFLAGS	= $(ENGFLGS) $(PKGFLAG) -pg -g -Wall -Wno-parentheses
-CFLAGS	= $(ENGFLGS) $(PKGFLAG) -O3 -DNDEBUG -Wall -Wno-parentheses -Wno-unused-function
+CFLAGS	= $(ENGFLGS) $(PKGFLAG) -std=c++98 -O3 -DNDEBUG -w
 #CFLAGS	= $(ENGFLGS) $(PKGFLAG) -g -Wall -Wno-parentheses
 
 .PHONY: depend extheader
