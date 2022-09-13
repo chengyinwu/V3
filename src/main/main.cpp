@@ -29,14 +29,10 @@ V3CmdMgr* v3CmdMgr = new V3CmdMgr("v3");
 V3Handler v3Handler;
 
 // Various Commands Registration
-extern bool initAlgCmd();
-extern bool initDfxCmd();
 extern bool initNtkCmd();
 extern bool initStgCmd();
 extern bool initVrfCmd();
-extern bool initV3MCCmd();
 extern bool initTransCmd();
-extern bool initCommonCmd();
 
 // Program Usage
 static void usage() {
@@ -51,8 +47,8 @@ int main(int argc, char** argv) {
    srand(time(NULL));
 
    // Register Commands
-   if (!(initAlgCmd() && initDfxCmd() && initNtkCmd() && initStgCmd() && initVrfCmd() &&
-         initV3MCCmd() && initTransCmd() && initCommonCmd())) {
+   if (!(initNtkCmd() && initStgCmd() && initVrfCmd() && initTransCmd())) 
+   {
       Msg(MSG_ERR) << "Command Register Failed !!!" << endl; exit(0);
    }
    
