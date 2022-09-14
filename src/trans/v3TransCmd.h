@@ -11,7 +11,10 @@
 
 #include "v3CmdMgr.h"
 
+V3_COMMAND(V3ExpandNtkCmd,    CMD_TYPE_SYNTHESIS);
 V3_COMMAND(V3BlastNtkCmd,     CMD_TYPE_SYNTHESIS);
+V3_COMMAND(V3MiterNtkCmd,     CMD_TYPE_SYNTHESIS);
+V3_COMMAND(V3FlattenNtkCmd,   CMD_TYPE_SYNTHESIS);
 
 #endif
 

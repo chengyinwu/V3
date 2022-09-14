@@ -15,6 +15,8 @@
 V3NtkInput* const V3NtkFromQuteRTL(const char*, const bool&, const bool&, const bool& = false);
 
 // Generic Parser Main Functions
+V3NtkInput* const V3BtorParser(const char*, const bool& = true);
+V3NtkInput* const V3AigParser(const char*, const bool& = true);
 V3NtkInput* const V3RTLParser(const char*);
 
 #endif

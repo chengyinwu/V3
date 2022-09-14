@@ -1,8 +1,8 @@
 # source codes to be compiled
-SRCPKGS	= cmd ntk alg vrf stg ext io trans svr adt util 
+SRCPKGS	= cmd ntk alg stg ext io trans vrf dfx svr adt util v3mc
 
 # library to be linked (should include SRCPKGS)
-LIBPKGS	= vrf stg trans alg ext ntk io ntk svr cmd adt util 
+LIBPKGS	= vrf dfx stg trans alg ext ntk io ntk svr cmd adt util v3mc
 
 # engine header files and libraries to be soft linked
 ENGPKGS	+= minisat
