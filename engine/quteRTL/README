@@ -1,0 +1,56 @@
+QuteRTL-V3-1.2 Source Release
+
+Front-end only version of QuteRTL.
+
+Copyleft(c) 2004-2014 LaDs(III), GIEE, NTU, Taiwan
+
+========================= INTRODUCTION =========================
+
+QuteRTL is a word-level framework developed for years. It generally 
+supports synthesizable Verilog input and BLIF format designs, followed 
+by a quick synthesizer which enables synthesizing CDFG (Control Data 
+Flow Graph) into word-level netlist, including logics, arithmetics, 
+shifters, comparators, FFs ..., etc. Afterwards, it supports us to 
+flatten the hierarchical design into single flattened module. 
+
+The abovementioned RTL (Verilog) front-end enables QuteRTL to serve 
+other back-end frameworks and applications, including our verification 
+and debugging framework, V3. 
+
+In this version of release, we provide our source code for RTL front-end 
+only. It is definitely a simplified package from the latest releases of 
+QuteRTL as well as a customized RTL front-end for V3. Please refer to 
+websites of QuteRTL and V3 for detailed information.
+
+========================= DOWNLOAD =========================
+
+Latest front-end only QuteRTL source code can be download in V3 website
+ http://dvlab.ee.ntu.edu.tw/~publication/V3/index.html
+
+ cd <directory-where-you-extracted-QuteRTL-sources>
+ wget http://dvlab.ee.ntu.edu.tw/~publication/V3/release/quteRTL-V3-1.2.tar.gz
+ tar zxvf quteRTL-V3-1.2.tar.gz
+ cd quteRTL-V3-1.2
+ make
+
+========================= EXECUTION =========================
+
+To run QuteRTL, please type following line in your command-line
+ ./qutertl
+
+========================= COMPILE LIBRARY  =========================
+
+If you want to compile a library for V3, type the following after "make"
+
+ make v3Lib
+
+Afterwards, please copy quteRTL.h and libquteRTL.a to src/eng/quteRTL of 
+V3 home directory. 
+
+========================= LICENSE =========================
+
+Please refer to the COPYING file for license and copying information.
+
+Hu-Hsi Yeh, Cheng-Yin Wu, and Chung-Yang (Ric) Huang, 
+National Taiwan University.
+Taipei, Taiwan, 2014.

@@ -1,0 +1,11 @@
+--- Makefile.in.old	2020-03-03 21:53:05.610236191 +0800
++++ Makefile.in.new	2020-03-03 22:04:26.139436833 +0800
+@@ -14,7 +14,7 @@
+ ENGFLGS = -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS
+ 
+ #CFLAGS	= $(ENGFLGS) $(PKGFLAG) -pg -g -Wall -Wno-parentheses
+-CFLAGS	= $(ENGFLGS) $(PKGFLAG) -O3 -DNDEBUG -Wall -Wno-parentheses -Wno-unused-function
++CFLAGS	= $(ENGFLGS) $(PKGFLAG) -std=c++98 -O3 -DNDEBUG -w
+ #CFLAGS	= $(ENGFLGS) $(PKGFLAG) -g -Wall -Wno-parentheses
+ 
+ .PHONY: depend extheader
